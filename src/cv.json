@@ -1,0 +1,187 @@
+{
+  "basics": {
+    "name": "Alejo Tello",
+    "label": "Desarrollador Full Stack • Machine Learning • TinyML • Estudiante de Ingeniería Informática",
+    "image": "src/icons/space.svg",
+    "email": "alejotello65@email.com",
+    "phone": "+57 3245299543",
+    "url": "https://alejotello.dev",
+    "summary": "Soy estudiante de Ingeniería Informática en proceso de grado, apasionado por el <span class='text-cyan-400 font-semibold'>desarrollo de software</span>, las <span class='text-purple-400 font-semibold'>bases de datos</span> y la implementación de soluciones tecnológicas. Me interesa seguir fortaleciendo mis conocimientos en <span class='text-blue-400 font-semibold'>Machine Learning</span>, <span class='text-sky-400 font-semibold'>TinyML</span> y desarrollo de sistemas, además de continuar ampliando mis bases en <span class='text-pink-400 font-semibold'>redes</span> y <span class='text-indigo-400 font-semibold'>seguridad informática</span>, aportando soluciones innovadoras y funcionales en distintos entornos tecnológicos.",
+    "location": {
+      "city": "Pasto",
+      "region": "Nariño",
+      "countryCode": "COLOMBIA"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "AlejoTello",
+        "url": "https://github.com/AlejoTello"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "Francisco Tello",
+        "url": "https://linkedin.com/in/tuusuario"
+      },
+      {
+        "network": "Portfolio",
+        "username": "alejotello.dev",
+        "url": "https://alejotello.dev"
+      }
+    ]
+  },
+
+  "work": [
+    {
+      "name": "Ingeniería Aplicada ITD SAS",
+      "position": "Desarrollador y analista de datos — Ingeniería General & IoT",
+      "url": "",
+      "startDate": "2026-01-31",
+      "endDate": "2026-05-29",
+      "summary": "Experiencia laboral de 6 meses aplicando conocimientos de ingeniería informática en entornos reales, trabajando con modelos de Machine Learning, TinyML, gestión de datos y apoyo en procesos técnicos e industriales.",
+      "highlights": [
+        "Desarrollo de modelos de Machine Learning y adaptación a TinyML para sistemas embebidos e IoT",
+        "Organización, limpieza y estructuración de bases de datos para integración y entrenamiento de modelos",
+        "Análisis y procesamiento de datos para generación de reportes e información técnica",
+        "Elaboración y corrección de documentación técnica y académica bajo normas APA y lineamientos institucionales",
+        "Gestión y organización de figuras, tablas, referencias y formato en documentos técnicos",
+        "Apoyo en actividades de mecánica general e industrial",
+        "Apoyo en procesos de soldadura y actividades operativas del área técnica",
+        "Horario: Lunes a Viernes 8:00 a.m. – 5:00 p.m."
+      ]
+    }
+  ],
+
+  "education": [
+    {
+      "institution": "Corporación Universitaria Autónoma de Nariño",
+      "area": "Ingeniería Informática",
+      "studyType": "Pregrado",
+      "startDate": "2021-01-01",
+      "endDate": null,
+      "summary": "Ingeniería Informática en proceso de grado. Formación orientada al <span class='text-cyan-400 font-semibold'>desarrollo de software</span>, <span class='text-blue-400 font-semibold'>bases de datos</span>, <span class='text-pink-400 font-semibold'>análisis de datos</span> y tecnologías como <span class='text-sky-400 font-semibold'>Machine Learning</span> y <span class='text-purple-400 font-semibold'>TinyML</span>."
+    }
+  ],
+
+  "skills": [
+    { "name": "HTML", "level": "Intermedio" },
+    { "name": "CSS", "level": "Intermedio" },
+    { "name": "JavaScript", "level": "Intermedio" },
+    { "name": "React", "level": "Intermedio" },
+    { "name": "TypeScript", "level": "Básico" },
+
+    { "name": "Python", "level": "Intermedio" },
+    { "name": "Java", "level": "Intermedio" },
+    { "name": "C++", "level": "Intermedio" },
+    { "name": "Django", "level": "Básico" },
+
+    { "name": "MySQL", "level": "Intermedio" },
+    { "name": "Bases de Datos", "level": "Intermedio" },
+    { "name": "Análisis de Datos", "level": "Intermedio" },
+
+    { "name": "Machine Learning", "level": "Básico" },
+    { "name": "IoT / TinyML", "level": "Básico" },
+    { "name": "Edge Impulse", "level": "Básico" },
+
+    { "name": "Git & GitHub", "level": "Intermedio" },
+    { "name": "Google Colab", "level": "Intermedio" },
+
+    { "name": "Redes", "level": "Básico" },
+    { "name": "Seguridad Informática", "level": "Básico" }
+  ],
+
+  "languages": [
+    { "language": "Español", "fluency": "Nativo" },
+    { "language": "Inglés", "fluency": "Nivel 6 (Universidad)" }
+  ],
+
+  "projects": [
+    {
+      "name": "CodeQuest - POO Gamificado",
+      "isActive": true,
+      "description": "Plataforma web educativa gamificada para la enseñanza de Programación Orientada a Objetos en Python, con evaluación automática mediante IA, sistema de XP, ranking y monitoreo académico.",
+      "highlights": [
+        "Desarrollado con Django, Python, MySQL y Tailwind CSS",
+        "Integración de IA (LLaMA 3.1 vía Groq API) para evaluación automática y retroalimentación",
+        "Sistema de gamificación con XP, niveles, logros y ranking global",
+        "Ejecución segura de código Python en tiempo real",
+        "Dashboard para estudiantes y docentes con estadísticas y seguimiento académico",
+        "Proyecto de tesis universitaria"
+      ],
+      "url": "https://github.com/THEBAT02468/codequest"
+    },
+    {
+      "name": "CinePlus",
+      "isActive": true,
+      "description": "Sistema de gestión de salas de cine con programa de fidelización y control de usuarios.",
+      "highlights": [
+        "MySQL + Python (Django)",
+        "Gestión de películas, horarios y boletos",
+        "Proyecto de Bases de Datos II"
+      ]
+    },
+    {
+      "name": "PetShop Online",
+      "isActive": true,
+      "description": "Tienda en línea de productos para mascotas con animaciones, rutas y carrito de compras.",
+      "highlights": [
+        "Vite + React + TypeScript",
+        "Animaciones con JavaScript externo",
+        "Diseño responsivo moderno"
+      ],
+      "url": "https://github.com/AlejoTello/PetShop-Online"
+    },
+    {
+      "name": "Club de Barcos",
+      "isActive": true,
+      "description": "Base de datos relacional normalizada para gestionar socios, barcos, puertos y salidas.",
+      "highlights": [
+        "Modelo E-R normalizado",
+        "Relaciones muchos a muchos",
+        "Práctica avanzada de bases de datos"
+      ]
+    },
+    {
+      "name": "Veterinaria Web",
+      "isActive": true,
+      "description": "Sitio web completo para veterinaria con secciones animadas y diseño con Tailwind + JS.",
+      "highlights": [
+        "Secciones dinámicas",
+        "Animaciones con JavaScript",
+        "Desarrollo front-end completo"
+      ]
+    },
+    {
+      "name": "Librería Digital",
+      "isActive": true,
+      "description": "Sistema de gestión para una librería, con control de libros, clientes y ventas.",
+      "highlights": [
+        "Modelo entidad-relación y consultas SQL",
+        "Gestión completa de inventario y ventas",
+        "Proyecto académico en bases de datos"
+      ]
+    },
+    {
+      "name": "Juego del Ahorcado (Java)",
+      "isActive": true,
+      "description": "Juego clásico de consola en Java, con sistema de intentos y detección de letras.",
+      "highlights": [
+        "Desarrollo orientado a objetos",
+        "Validación dinámica de entrada",
+        "Diseño simple y funcional"
+      ]
+    },
+    {
+      "name": "Tienda Electrónica (C++)",
+      "isActive": true,
+      "description": "Aplicación de consola que realiza facturación con IVA y descuentos automáticos.",
+      "highlights": [
+        "Pseudocódigo, diagrama de flujo y código funcional",
+        "Ejercicio de lógica y estructuras de control"
+      ]
+    }
+  ],
+
+  "volunteer": [],
+  "references": []
+}

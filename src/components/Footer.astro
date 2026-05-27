@@ -1,0 +1,136 @@
+---
+import LogoSvg from "../icons/Logo.svg";
+import cv from "../cv.json";
+
+const { basics } = cv;
+const year = new Date().getFullYear();
+---
+
+<footer id="contacto" class="w-full bg-gradient-to-r from-black via-indigo-950 to-black text-gray-300 mt-20 relative overflow-hidden">
+
+  <!-- Fondo -->
+  <div class="absolute inset-0 opacity-20">
+    <div class="stars"></div>
+    <div class="stars2"></div>
+  </div>
+
+  <div class="relative max-w-[1392px] mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 z-10">
+
+    <!-- Logo -->
+    <div>
+      <div class="flex items-center gap-x-3 mb-4">
+        <LogoSvg class="w-12 h-12 drop-shadow-[0_0_10px_#38bdf8]" />
+
+        <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+          Alejo Tello
+        </span>
+      </div>
+
+      <p class="text-sm leading-relaxed text-gray-300">
+        Portafolio personal enfocado en desarrollo de software, Machine Learning,
+        TinyML y tecnologías web modernas 🚀.
+      </p>
+    </div>
+
+    <!-- Navegación -->
+    <div>
+      <h3 class="text-lg font-semibold text-cyan-300 mb-4">Navegación</h3>
+
+      <ul class="space-y-2">
+        <li><a href="#bio" class="hover:text-cyan-400 hover:translate-x-1 inline-block transition-all duration-300">🏠 Inicio</a></li>
+
+        <li><a href="#experiencia" class="hover:text-cyan-400 hover:translate-x-1 inline-block transition-all duration-300">💼 Experiencia</a></li>
+
+        <li><a href="#proyectos" class="hover:text-cyan-400 hover:translate-x-1 inline-block transition-all duration-300">🚀 Proyectos</a></li>
+
+        <li><a href="#contacto" class="hover:text-cyan-400 hover:translate-x-1 inline-block transition-all duration-300">📡 Contacto</a></li>
+      </ul>
+    </div>
+
+    <!-- Contacto -->
+    <div>
+      <h3 class="text-lg font-semibold text-cyan-300 mb-4">Contacto</h3>
+
+      <ul class="space-y-3 text-sm">
+
+        <!-- Correo -->
+        <li>
+          <span class="font-medium text-white">📧 Email:</span>
+
+          <a
+            href={`mailto:${basics.email}?subject=Contacto desde tu portafolio`}
+            class="hover:text-cyan-300 transition-colors ml-1"
+          >
+            {basics.email}
+          </a>
+        </li>
+
+        <!-- WhatsApp -->
+        <li>
+          <span class="font-medium text-white">📱 WhatsApp:</span>
+
+          <a
+            href={`https://wa.me/${basics.phone.replace(/\D/g, "")}?text=Hola%20Alejo,%20vi%20tu%20portafolio%20y%20me%20interesa%20contactarte`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-green-300 transition-colors ml-1"
+          >
+            {basics.phone}
+          </a>
+        </li>
+
+        <!-- Ubicación -->
+        <li>
+          <span class="font-medium text-white">📍 Ubicación:</span>
+          {basics.location.city}, {basics.location.region}, Colombia
+        </li>
+      </ul>
+
+      <!-- Redes -->
+      <div class="flex gap-4 mt-5 text-2xl">
+
+        <!-- GitHub -->
+        <a
+          href={basics.profiles[0].url}
+          target="_blank"
+          rel="noopener noreferrer"
+          title="GitHub"
+          class="hover:text-cyan-400 hover:scale-125 transition-transform duration-300"
+        >
+          🐙
+        </a>
+
+        <!-- LinkedIn -->
+        <a
+          href={basics.profiles[1]?.url || "#"}
+          target="_blank"
+          rel="noopener noreferrer"
+          title="LinkedIn"
+          class="hover:text-sky-400 hover:scale-125 transition-transform duration-300"
+        >
+          💼
+        </a>
+
+        <!-- Portfolio -->
+        <a
+          href={basics.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Portafolio"
+          class="hover:text-indigo-400 hover:scale-125 transition-transform duration-300"
+        >
+          🌐
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="relative border-t border-white/10 mt-8 py-4 text-center text-sm text-gray-400 z-10">
+    © {year}
+    <span class="text-cyan-300 font-semibold">
+      Francisco Alejandro Tello
+    </span>.
+    Todos los derechos reservados.
+  </div>
+</footer>

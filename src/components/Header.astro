@@ -1,0 +1,239 @@
+---
+import LogoSvg from "../icons/baner.svg";
+---
+
+<header
+  class="relative w-full sticky top-0 z-50 backdrop-blur-md bg-black/50 border-b border-white/10 shadow-lg overflow-hidden"
+>
+  <!-- 🌌 Fondo espacial -->
+  <div class="header-space"></div>
+  <div class="header-stars"></div>
+  <div class="header-extra1"></div>
+  
+  <div
+    class="relative z-10 max-w-[1392px] mx-auto flex justify-between items-center px-6 py-4"
+  >
+    <!-- Logo + Nombre -->
+    <div class="flex items-center gap-x-4">
+      <div
+        class="w-16 h-16 flex items-center justify-center rounded-full border border-cyan-400/50
+               shadow-[0_0_10px_#22d3ee] bg-black/40 transition-all duration-300
+               hover:shadow-[0_0_20px_#38bdf8] hover:scale-105"
+      >
+        <LogoSvg
+          class="w-12 h-12 text-cyan-400 drop-shadow-[0_0_8px_#22d3ee]"
+          aria-label="Logo"
+        />
+      </div>
+
+      <div>
+        <span
+          class="text-3xl font-bold tracking-wide bg-clip-text text-transparent
+                 bg-gradient-to-r from-cyan-400 to-blue-500"
+        >
+          Alejo Tello
+        </span>
+
+        <p class="text-xs text-gray-400 tracking-[0.25em] uppercase mt-1">
+          Full Stack • ING.Informatico • TinyML • Machine Learning
+        </p>
+      </div>
+    </div>
+
+    <!-- Botón Mobile -->
+    <button
+      id="menu-toggle"
+      class="md:hidden text-cyan-300 hover:text-cyan-400 transition-colors duration-300"
+      aria-label="Abrir menú"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-8 h-8"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+    <!-- Navegación Desktop -->
+    <nav class="hidden md:flex gap-x-8 text-lg font-semibold">
+      <a
+        href="#bio"
+        class="nav-link text-cyan-300 hover:scale-110 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_#38bdf8] transition-all duration-300"
+      >
+        🏠 Inicio
+      </a>
+
+      <a
+        href="#experiencia"
+        class="nav-link text-cyan-300 hover:scale-110 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_#38bdf8] transition-all duration-300"
+      >
+        💼 Experiencia
+      </a>
+
+      <a
+        href="#proyectos"
+        class="nav-link text-cyan-300 hover:scale-110 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_#38bdf8] transition-all duration-300"
+      >
+        🚀 Proyectos
+      </a>
+
+      <a
+        href="#contacto"
+        class="nav-link text-cyan-300 hover:scale-110 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_#38bdf8] transition-all duration-300"
+      >
+        📡 Contacto
+      </a>
+    </nav>
+  </div>
+
+  <!-- Menú Mobile -->
+  <nav
+    id="mobile-menu"
+    class="hidden md:hidden flex-col px-6 pb-4 gap-y-3 text-lg font-semibold
+           border-t border-white/10 bg-black/40 backdrop-blur-md relative z-10"
+  >
+    <a href="#bio" class="text-cyan-300 hover:text-cyan-400 py-2">🏠 Inicio</a>
+    <a href="#experiencia" class="text-cyan-300 hover:text-cyan-400 py-2"
+      >💼 Experiencia</a
+    >
+    <a href="#proyectos" class="text-cyan-300 hover:text-cyan-400 py-2"
+      >🚀 Proyectos</a
+    >
+    <a href="#contacto" class="text-cyan-300 hover:text-cyan-400 py-2"
+      >📡 Contacto</a
+    >
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+
+  toggle?.addEventListener("click", () => {
+    menu?.classList.toggle("hidden");
+    menu?.classList.toggle("flex");
+  });
+
+  menu?.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => {
+      menu.classList.add("hidden");
+      menu.classList.remove("flex");
+    });
+  });
+
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 120;
+      if (scrollY >= sectionTop) current = section.id;
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("text-white", "drop-shadow-[0_0_10px_#38bdf8]");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("text-white", "drop-shadow-[0_0_10px_#38bdf8]");
+      }
+    });
+  });
+</script>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* 🌌 fondo espacial */
+  .header-space {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      circle at top,
+      rgba(56, 189, 248, 0.12),
+      rgba(0, 0, 0, 0.85)
+    );
+  }
+
+  /* ✨ estrellas */
+  .header-stars {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .header-stars::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background-image:
+      radial-gradient(1px 1px at 20px 30px, #ffd700, transparent),
+      radial-gradient(1px 1px at 120px 80px, #ffffff, transparent),
+      radial-gradient(1px 1px at 200px 150px, #facc15, transparent),
+      radial-gradient(1px 1px at 300px 220px, #fff, transparent);
+    opacity: 0.35;
+    animation: starsMoveHeader 140s linear infinite;
+  }
+
+  @keyframes starsMoveHeader {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-1000px);
+    }
+  }
+
+  /* 🌍 planetas */
+  .header-space::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 20%;
+    left: 12%;
+    border-radius: 50%;
+    background: radial-gradient(circle, #38bdf8, #1e3a8a);
+    opacity: 0.35;
+    animation: floatPlanet 20s ease-in-out infinite;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+  }
+
+  .header-space::before {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    bottom: 15%;
+    right: 18%;
+    border-radius: 50%;
+    background: radial-gradient(circle, #facc15, #92400e);
+    opacity: 0.3;
+    animation: floatPlanet 28s ease-in-out infinite;
+  }
+
+  @keyframes floatPlanet {
+    0% {
+      transform: translateY(0px) translateX(0px);
+    }
+    50% {
+      transform: translateY(-10px) translateX(8px);
+    }
+    100% {
+      transform: translateY(0px) translateX(0px);
+    }
+  }
+</style>
