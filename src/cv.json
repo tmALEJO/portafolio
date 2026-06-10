@@ -21,7 +21,7 @@
       {
         "network": "LinkedIn",
         "username": "Francisco Tello",
-        "url": "https://linkedin.com/in/tuusuario"
+        "url": "https://www.linkedin.com/in/alejo-tello-126183232/"
       },
       {
         "network": "Portfolio",
@@ -57,7 +57,7 @@
       "institution": "Corporación Universitaria Autónoma de Nariño",
       "area": "Ingeniería Informática",
       "studyType": "Pregrado",
-      "startDate": "2021-01-01",
+      "startDate": "2022-01-01",
       "endDate": null,
       "summary": "Ingeniería Informática en proceso de grado. Formación orientada al <span class='text-cyan-400 font-semibold'>desarrollo de software</span>, <span class='text-blue-400 font-semibold'>bases de datos</span>, <span class='text-pink-400 font-semibold'>análisis de datos</span> y tecnologías como <span class='text-sky-400 font-semibold'>Machine Learning</span> y <span class='text-purple-400 font-semibold'>TinyML</span>."
     }
@@ -80,7 +80,7 @@
     { "name": "Análisis de Datos", "level": "Intermedio" },
 
     { "name": "Machine Learning", "level": "Básico" },
-    { "name": "IoT / TinyML", "level": "Básico" },
+    { "name": "IoT / TinyML", "level": "Intermedio" },
     { "name": "Edge Impulse", "level": "Básico" },
 
     { "name": "Git & GitHub", "level": "Intermedio" },

@@ -1,5 +1,14 @@
 ---
 import LogoSvg from "../icons/baner.svg";
+
+const pathname = Astro.url.pathname;
+
+const navLinks = [
+  { href: "/", label: "🏠 Inicio" },
+  { href: "/about", label: "👤 Sobre mí" },
+  { href: "/projects", label: "🚀 Proyectos" },
+  { href: "/contact", label: "📡 Contacto" },
+];
 ---
 
 <header
@@ -9,12 +18,12 @@ import LogoSvg from "../icons/baner.svg";
   <div class="header-space"></div>
   <div class="header-stars"></div>
   <div class="header-extra1"></div>
-  
+
   <div
     class="relative z-10 max-w-[1392px] mx-auto flex justify-between items-center px-6 py-4"
   >
     <!-- Logo + Nombre -->
-    <div class="flex items-center gap-x-4">
+    <a href="/" class="flex items-center gap-x-4 no-underline">
       <div
         class="w-16 h-16 flex items-center justify-center rounded-full border border-cyan-400/50
                shadow-[0_0_10px_#22d3ee] bg-black/40 transition-all duration-300
@@ -33,12 +42,11 @@ import LogoSvg from "../icons/baner.svg";
         >
           Alejo Tello
         </span>
-
         <p class="text-xs text-gray-400 tracking-[0.25em] uppercase mt-1">
           Full Stack • ING.Informatico • TinyML • Machine Learning
         </p>
       </div>
-    </div>
+    </a>
 
     <!-- Botón Mobile -->
     <button
@@ -62,33 +70,27 @@ import LogoSvg from "../icons/baner.svg";
     </button>
 
     <!-- Navegación Desktop -->
-    <nav class="hidden md:flex gap-x-8 text-lg font-semibold">
+    <nav class="hidden md:flex items-center gap-x-6 text-lg font-semibold">
+      {navLinks.map(({ href, label }) => (
+        <a
+          href={href}
+          class={`nav-link transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_#38bdf8]
+            ${pathname === href
+              ? "text-white drop-shadow-[0_0_10px_#38bdf8] border-b-2 border-cyan-400 pb-0.5"
+              : "text-cyan-300 hover:text-cyan-400"
+            }`}
+        >
+          {label}
+        </a>
+      ))}
       <a
-        href="#bio"
-        class="nav-link text-cyan-300 hover:scale-110 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_#38bdf8] transition-all duration-300"
+        href="/CV_Francisco.pdf"
+        download
+        class="ml-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg
+               font-semibold shadow-[0_0_12px_#0ea5e9] hover:shadow-[0_0_24px_#38bdf8]
+               hover:scale-105 transition-all duration-300 text-sm"
       >
-        🏠 Inicio
-      </a>
-
-      <a
-        href="#experiencia"
-        class="nav-link text-cyan-300 hover:scale-110 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_#38bdf8] transition-all duration-300"
-      >
-        💼 Experiencia
-      </a>
-
-      <a
-        href="#proyectos"
-        class="nav-link text-cyan-300 hover:scale-110 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_#38bdf8] transition-all duration-300"
-      >
-        🚀 Proyectos
-      </a>
-
-      <a
-        href="#contacto"
-        class="nav-link text-cyan-300 hover:scale-110 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_#38bdf8] transition-all duration-300"
-      >
-        📡 Contacto
+        📄 CV
       </a>
     </nav>
   </div>
@@ -99,16 +101,22 @@ import LogoSvg from "../icons/baner.svg";
     class="hidden md:hidden flex-col px-6 pb-4 gap-y-3 text-lg font-semibold
            border-t border-white/10 bg-black/40 backdrop-blur-md relative z-10"
   >
-    <a href="#bio" class="text-cyan-300 hover:text-cyan-400 py-2">🏠 Inicio</a>
-    <a href="#experiencia" class="text-cyan-300 hover:text-cyan-400 py-2"
-      >💼 Experiencia</a
+    {navLinks.map(({ href, label }) => (
+      <a
+        href={href}
+        class={`py-2 transition-colors duration-300
+          ${pathname === href ? "text-white" : "text-cyan-300 hover:text-cyan-400"}`}
+      >
+        {label}
+      </a>
+    ))}
+    <a
+      href="public/CV_Francisco.pdf"
+      download
+      class="py-2 text-cyan-300 hover:text-cyan-400"
     >
-    <a href="#proyectos" class="text-cyan-300 hover:text-cyan-400 py-2"
-      >🚀 Proyectos</a
-    >
-    <a href="#contacto" class="text-cyan-300 hover:text-cyan-400 py-2"
-      >📡 Contacto</a
-    >
+      📄 Descargar CV
+    </a>
   </nav>
 </header>
 
@@ -127,25 +135,6 @@ import LogoSvg from "../icons/baner.svg";
       menu.classList.remove("flex");
     });
   });
-
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".nav-link");
-
-  window.addEventListener("scroll", () => {
-    let current = "";
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 120;
-      if (scrollY >= sectionTop) current = section.id;
-    });
-
-    navLinks.forEach((link) => {
-      link.classList.remove("text-white", "drop-shadow-[0_0_10px_#38bdf8]");
-      if (link.getAttribute("href") === `#${current}`) {
-        link.classList.add("text-white", "drop-shadow-[0_0_10px_#38bdf8]");
-      }
-    });
-  });
 </script>
 
 <style>
@@ -153,7 +142,6 @@ import LogoSvg from "../icons/baner.svg";
     scroll-behavior: smooth;
   }
 
-  /* 🌌 fondo espacial */
   .header-space {
     position: absolute;
     inset: 0;
@@ -166,7 +154,6 @@ import LogoSvg from "../icons/baner.svg";
     );
   }
 
-  /* ✨ estrellas */
   .header-stars {
     position: absolute;
     inset: 0;
@@ -189,15 +176,10 @@ import LogoSvg from "../icons/baner.svg";
   }
 
   @keyframes starsMoveHeader {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(-1000px);
-    }
+    from { transform: translateY(0); }
+    to { transform: translateY(-1000px); }
   }
 
-  /* 🌍 planetas */
   .header-space::after {
     content: "";
     position: absolute;
@@ -226,14 +208,8 @@ import LogoSvg from "../icons/baner.svg";
   }
 
   @keyframes floatPlanet {
-    0% {
-      transform: translateY(0px) translateX(0px);
-    }
-    50% {
-      transform: translateY(-10px) translateX(8px);
-    }
-    100% {
-      transform: translateY(0px) translateX(0px);
-    }
+    0% { transform: translateY(0px) translateX(0px); }
+    50% { transform: translateY(-10px) translateX(8px); }
+    100% { transform: translateY(0px) translateX(0px); }
   }
 </style>

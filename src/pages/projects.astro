@@ -1,0 +1,234 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WaterDrops from '../components/WaterDrops.astro';
+import cv from '../cv.json';
+
+const { projects } = cv;
+---
+
+<Layout title="Proyectos | Alejo Tello">
+  <Header />
+  <WaterDrops />
+
+  <main class="relative z-10 w-full min-h-screen text-white pb-20">
+
+    <!-- Hero -->
+    <section class="flex flex-col items-center justify-center pt-20 pb-12 px-6 text-center">
+      <div class="inline-block mb-4 px-4 py-1 rounded-full border border-cyan-400/40 bg-cyan-400/10 text-cyan-300 text-sm tracking-widest uppercase">
+        ⬡ Portafolio ⬡
+      </div>
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent drop-shadow-[0_0_20px_#38bdf8]">
+        Mis Proyectos
+      </h1>
+      <p class="text-gray-400 max-w-xl">
+        Cosas que he construido — desde plataformas educativas hasta sistemas embebidos con ML.
+      </p>
+    </section>
+
+    <!-- Filtros -->
+    <section class="max-w-5xl mx-auto px-6 mb-10">
+      <div class="flex flex-wrap justify-center gap-3" id="filter-btns">
+        <button data-filter="todos" class="filter-btn active px-5 py-2 rounded-full border border-cyan-400/50 bg-cyan-400/10 text-cyan-300 text-sm font-semibold transition-all duration-300 hover:bg-cyan-400/20">
+          Todos
+        </button>
+        <button data-filter="web" class="filter-btn px-5 py-2 rounded-full border border-white/20 bg-white/5 text-gray-300 text-sm font-semibold transition-all duration-300 hover:border-cyan-400/50 hover:text-cyan-300">
+          🌐 Web
+        </button>
+        <button data-filter="ml" class="filter-btn px-5 py-2 rounded-full border border-white/20 bg-white/5 text-gray-300 text-sm font-semibold transition-all duration-300 hover:border-purple-400/50 hover:text-purple-300">
+          🤖 ML / IoT
+        </button>
+        <button data-filter="datos" class="filter-btn px-5 py-2 rounded-full border border-white/20 bg-white/5 text-gray-300 text-sm font-semibold transition-all duration-300 hover:border-blue-400/50 hover:text-blue-300">
+          🗄️ Datos / BD
+        </button>
+        <button data-filter="juegos" class="filter-btn px-5 py-2 rounded-full border border-white/20 bg-white/5 text-gray-300 text-sm font-semibold transition-all duration-300 hover:border-green-400/50 hover:text-green-300">
+          🎮 Otros
+        </button>
+      </div>
+    </section>
+
+    <!-- Grid proyectos -->
+    <section class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projects-grid">
+
+        <!-- CodeQuest -->
+        <article data-category="web" class="project-card bg-white/5 border border-cyan-400/30 p-6 rounded-2xl shadow-[0_0_20px_#0ea5e9]/20 hover:shadow-[0_0_35px_#38bdf8]/50 hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/30 text-cyan-300">🌐 Web</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-400">Activo</span>
+            </div>
+            <h3 class="text-xl font-bold text-cyan-300 mb-2">CodeQuest — POO Gamificado</h3>
+            <p class="text-gray-300 text-sm mb-4">Plataforma web educativa gamificada para enseñanza de POO en Python, con evaluación automática por IA, sistema de XP y ranking.</p>
+            <ul class="space-y-1 mb-4">
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-cyan-400">▹</span>Django, Python, MySQL, Tailwind</li>
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-cyan-400">▹</span>IA con LLaMA 3.1 vía Groq API</li>
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-cyan-400">▹</span>Proyecto de tesis universitaria</li>
+            </ul>
+          </div>
+          <a href="https://github.com/THEBAT02468/codequest" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sky-400 text-sm hover:text-sky-300 hover:underline transition-colors">
+            🔗 Ver repositorio
+          </a>
+        </article>
+
+        <!-- CinePlus -->
+        <article data-category="datos" class="project-card bg-white/5 border border-blue-400/30 p-6 rounded-2xl shadow-[0_0_20px_#2563eb]/20 hover:shadow-[0_0_35px_#3b82f6]/50 hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-blue-400/10 border border-blue-400/30 text-blue-300">🗄️ BD</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-400">Activo</span>
+            </div>
+            <h3 class="text-xl font-bold text-blue-300 mb-2">CinePlus</h3>
+            <p class="text-gray-300 text-sm mb-4">Sistema de gestión de salas de cine con programa de fidelización y control de usuarios.</p>
+            <ul class="space-y-1 mb-4">
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-blue-400">▹</span>MySQL + Python (Django)</li>
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-blue-400">▹</span>Gestión de películas, horarios y boletos</li>
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-blue-400">▹</span>Proyecto de Bases de Datos II</li>
+            </ul>
+          </div>
+          <span class="text-gray-500 text-xs italic">Proyecto académico</span>
+        </article>
+
+        <!-- PetShop -->
+        <article data-category="web" class="project-card bg-white/5 border border-pink-400/30 p-6 rounded-2xl shadow-[0_0_20px_#ec4899]/20 hover:shadow-[0_0_35px_#f472b6]/50 hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-pink-400/10 border border-pink-400/30 text-pink-300">🌐 Web</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-400">Activo</span>
+            </div>
+            <h3 class="text-xl font-bold text-pink-300 mb-2">PetShop Online</h3>
+            <p class="text-gray-300 text-sm mb-4">Tienda en línea de productos para mascotas con animaciones, rutas y carrito de compras.</p>
+            <ul class="space-y-1 mb-4">
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-pink-400">▹</span>Vite + React + TypeScript</li>
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-pink-400">▹</span>Animaciones con JavaScript externo</li>
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-pink-400">▹</span>Diseño responsivo moderno</li>
+            </ul>
+          </div>
+          <a href="https://github.com/AlejoTello/PetShop-Online" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sky-400 text-sm hover:text-sky-300 hover:underline transition-colors">
+            🔗 Ver repositorio
+          </a>
+        </article>
+
+        <!-- Club de Barcos -->
+        <article data-category="datos" class="project-card bg-white/5 border border-indigo-400/30 p-6 rounded-2xl shadow-[0_0_20px_#4f46e5]/20 hover:shadow-[0_0_35px_#6366f1]/50 hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-indigo-400/10 border border-indigo-400/30 text-indigo-300">🗄️ BD</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-400">Activo</span>
+            </div>
+            <h3 class="text-xl font-bold text-indigo-300 mb-2">Club de Barcos</h3>
+            <p class="text-gray-300 text-sm mb-4">Base de datos relacional normalizada para gestionar socios, barcos, puertos y salidas.</p>
+            <ul class="space-y-1 mb-4">
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-indigo-400">▹</span>Modelo E-R normalizado</li>
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-indigo-400">▹</span>Relaciones muchos a muchos</li>
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-indigo-400">▹</span>Práctica avanzada de bases de datos</li>
+            </ul>
+          </div>
+          <span class="text-gray-500 text-xs italic">Proyecto académico</span>
+        </article>
+
+        <!-- Veterinaria -->
+        <article data-category="web" class="project-card bg-white/5 border border-green-400/30 p-6 rounded-2xl shadow-[0_0_20px_#22c55e]/20 hover:shadow-[0_0_35px_#4ade80]/50 hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-green-400/10 border border-green-400/30 text-green-300">🌐 Web</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-400">Activo</span>
+            </div>
+            <h3 class="text-xl font-bold text-green-300 mb-2">Veterinaria Web</h3>
+            <p class="text-gray-300 text-sm mb-4">Sitio web completo para veterinaria con secciones animadas y diseño con Tailwind + JS.</p>
+            <ul class="space-y-1 mb-4">
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-green-400">▹</span>Secciones dinámicas</li>
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-green-400">▹</span>Animaciones con JavaScript</li>
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-green-400">▹</span>Desarrollo front-end completo</li>
+            </ul>
+          </div>
+          <span class="text-gray-500 text-xs italic">Proyecto académico</span>
+        </article>
+
+        <!-- Librería Digital -->
+        <article data-category="datos" class="project-card bg-white/5 border border-yellow-400/30 p-6 rounded-2xl shadow-[0_0_20px_#ca8a04]/20 hover:shadow-[0_0_35px_#facc15]/50 hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-yellow-400/10 border border-yellow-400/30 text-yellow-300">🗄️ BD</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-400">Activo</span>
+            </div>
+            <h3 class="text-xl font-bold text-yellow-300 mb-2">Librería Digital</h3>
+            <p class="text-gray-300 text-sm mb-4">Sistema de gestión para una librería, con control de libros, clientes y ventas.</p>
+            <ul class="space-y-1 mb-4">
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-yellow-400">▹</span>Modelo E-R y consultas SQL</li>
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-yellow-400">▹</span>Gestión completa de inventario</li>
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-yellow-400">▹</span>Proyecto académico en BD</li>
+            </ul>
+          </div>
+          <span class="text-gray-500 text-xs italic">Proyecto académico</span>
+        </article>
+
+        <!-- Ahorcado -->
+        <article data-category="juegos" class="project-card bg-white/5 border border-orange-400/30 p-6 rounded-2xl shadow-[0_0_20px_#ea580c]/20 hover:shadow-[0_0_35px_#f97316]/50 hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-orange-400/10 border border-orange-400/30 text-orange-300">🎮 Otros</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-400">Activo</span>
+            </div>
+            <h3 class="text-xl font-bold text-orange-300 mb-2">Juego del Ahorcado (Java)</h3>
+            <p class="text-gray-300 text-sm mb-4">Juego clásico de consola en Java con sistema de intentos y detección de letras.</p>
+            <ul class="space-y-1 mb-4">
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-orange-400">▹</span>Desarrollo orientado a objetos</li>
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-orange-400">▹</span>Validación dinámica de entrada</li>
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-orange-400">▹</span>Diseño simple y funcional</li>
+            </ul>
+          </div>
+          <span class="text-gray-500 text-xs italic">Proyecto académico</span>
+        </article>
+
+        <!-- Tienda Electrónica -->
+        <article data-category="juegos" class="project-card bg-white/5 border border-red-400/30 p-6 rounded-2xl shadow-[0_0_20px_#dc2626]/20 hover:shadow-[0_0_35px_#ef4444]/50 hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-red-400/10 border border-red-400/30 text-red-300">🎮 Otros</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-400">Activo</span>
+            </div>
+            <h3 class="text-xl font-bold text-red-300 mb-2">Tienda Electrónica (C++)</h3>
+            <p class="text-gray-300 text-sm mb-4">App de consola que realiza facturación con IVA y descuentos automáticos.</p>
+            <ul class="space-y-1 mb-4">
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-red-400">▹</span>Pseudocódigo y diagrama de flujo</li>
+              <li class="flex items-start gap-2 text-gray-400 text-xs"><span class="text-red-400">▹</span>Ejercicio de lógica y estructuras</li>
+            </ul>
+          </div>
+          <span class="text-gray-500 text-xs italic">Proyecto académico</span>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  const btns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => {
+        b.classList.remove('active', 'bg-cyan-400/10', 'border-cyan-400/50', 'text-cyan-300');
+        b.classList.add('bg-white/5', 'border-white/20', 'text-gray-300');
+      });
+      btn.classList.add('active', 'bg-cyan-400/10', 'border-cyan-400/50', 'text-cyan-300');
+      btn.classList.remove('bg-white/5', 'border-white/20', 'text-gray-300');
+
+      const filter = btn.getAttribute('data-filter');
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (filter === 'todos' || cat === filter) {
+          (card as HTMLElement).style.display = 'flex';
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
